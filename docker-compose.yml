@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  selenium-server:
+    image: seleniarm/standalone-chromium:latest
+    container_name: selenium-server
+    ports:
+      - "4444:4444"
+      - "5900:5900"
+      - "7900:7900"
+    shm_size: 2g
+    networks:
+      - app-net
+
+  flask-app:
+    build: .
+    container_name: flask-app
+    privileged: true
+    ports:
+      - "5500:5500"
+    volumes:
+      -  ./flask-app:/app 
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - app-net
+    depends_on:
+      - selenium-server
+
+networks:
+  app-net:
+    driver: bridge

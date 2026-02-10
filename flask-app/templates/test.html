@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render Templates Example</title>
+</head>
+
+<body>
+    <form action="/gogo" method="post">
+        <h2>본인인증 정보 입력</h2>
+        <label>이름</label>
+        <input name="name" type="text" placeholder="홍길동"><br>
+        <label>생년월일</label>
+        <input name="birth" type="text" placeholder="19900101"><br>
+        <label>휴대폰 번호</label>
+        <select name="phone1">
+            <option value="010">010</option>
+            <option value="011">011</option>
+            <option value="016">016</option>
+            <option value="017">017</option>            
+        </select>
+        <input name="phone2" type="text" placeholder="12341234"><br>
+        <input id="totalAgree" type="checkbox"> <label for="totalAgree">서비스 이용에 대한 동의 전체동의</label><br>
+        <button type="submit" id="oacx-request-btn-pc">인증 요청</button>
+    </form>
+
+</body>
+
+</html>
